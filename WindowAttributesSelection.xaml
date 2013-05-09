@@ -4,6 +4,7 @@
 	x:Class="XmlSorter.WindowAttributesSelection"
 	x:Name="Window"
 	Title="Sorting Attributes"
+    Closing="Window_Closing"
 	Width="340" Height="400" MinWidth="340" MinHeight="400" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Icon="/XmlSorter;component/XML.ico">
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>

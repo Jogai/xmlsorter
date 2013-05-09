@@ -199,13 +199,13 @@ namespace XmlSorter
             if(WindowAttributesSelectionInstance == null)
             {
                 WindowAttributesSelectionInstance = new WindowAttributesSelection(AttributesBindingInstance);
-                WindowAttributesSelectionInstance.Closed += new EventHandler(delegate
+                WindowAttributesSelectionInstance.IsVisibleChanged += new DependencyPropertyChangedEventHandler(delegate
                     {
                         MaintainControlsAvailability();
                     });
             }
-            ButtonSelectAttributes.IsEnabled = false;
             WindowAttributesSelectionInstance.Show(this);
+            MaintainControlsAvailability();
         }
 
         private bool ShowOpenDialog()
@@ -247,7 +247,6 @@ namespace XmlSorter
             ButtonSelectAttributes.IsEnabled = CheckBoxSortBySpecificAttributes.IsChecked.Value && (WindowAttributesSelectionInstance == null || !WindowAttributesSelectionInstance.IsVisible);
             GroupBoxActions.IsEnabled = TextBlockSouurcePath.Text.Length > 0;
             ButtonSort.IsEnabled = CheckBoxSortByTagName.IsChecked.Value || CheckBoxSortAttributes.IsChecked.Value || CheckBoxSortBySpecificAttributes.IsChecked.Value;
-            //ButtonSave.IsEnabled = WebBrowserAfter.ur;
             ButtonSave.IsEnabled = TextBlockTargetPath.Text.Length > 0;
             if(!CheckBoxSortBySpecificAttributes.IsChecked.Value && WindowAttributesSelectionInstance != null && WindowAttributesSelectionInstance.IsVisible)
             {

@@ -28,6 +28,12 @@ namespace XmlSorter
             //Visibility = System.Windows.Visibility.Hidden;
         }
 
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
+        }
+
         #endregion
     }
 }
