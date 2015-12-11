@@ -108,9 +108,9 @@ namespace XmlSorter
         private void ButtonSort_Click(object sender, RoutedEventArgs e)
         {
             FilteredSortingAttibutes = AttributesBindingInstance.GetSelected();
-            XElement xe = XElement.Load(TempSourceFilePath);
-            SortElement(xe);
-            xe.Save(TempTargetFilePath);
+            bool sortAttributes = CheckBoxSortAttributes.IsChecked.Value;
+            bool sortBySpecificAttributes = CheckBoxSortBySpecificAttributes.IsChecked.Value;
+            XmlSorterLib.Sorter.SortElementHelper(TempSourceFilePath, TempTargetFilePath, sortAttributes, sortBySpecificAttributes, FilteredSortingAttibutes);
             WebBrowserAfter.NavigateSafely(TempTargetFilePath);
         }
 
@@ -135,34 +135,10 @@ namespace XmlSorter
         {
             System.IO.File.Copy(TempTargetFilePath, TextBlockTargetPath.Text, true);
         }
-       
+
         #endregion
 
         #region Helper Functions
-
-        private void SortElement(XElement xe)
-        {
-            IEnumerable<XNode> NodesToBePreserved = xe.Nodes().Where(P => P.GetType() != typeof(XElement));
-            if(CheckBoxSortAttributes.IsChecked.Value)
-            {
-                xe.ReplaceAttributes(xe.Attributes().OrderBy(x => x.Name.LocalName));
-            }
-            if(!CheckBoxSortBySpecificAttributes.IsChecked.Value || FilteredSortingAttibutes.Count() == 0)
-            {
-                xe.ReplaceNodes((xe.Elements().OrderBy(x => x.Name.LocalName).Union((NodesToBePreserved).OrderBy(P => P.ToString()))).OrderBy(N => N.NodeType.ToString()));
-            }
-            else
-            {
-                foreach(string Att in FilteredSortingAttibutes)
-                {
-                    xe.ReplaceNodes((xe.Elements().OrderBy(x => x.Name.LocalName).ThenBy(x => (string)x.Attribute(Att)).Union((NodesToBePreserved).OrderBy(P => P.ToString()))).OrderBy(N => N.NodeType.ToString()));
-                }
-            }
-            foreach(XElement xc in xe.Elements())
-            {
-                SortElement(xc);
-            }
-        }
 
         private void ReadAttributes()
         {

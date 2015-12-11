@@ -1,0 +1,13 @@
+#for .net
+**/[Oo]bj/[Dd]ebug/
+**/[Oo]bj/[Rr]elease/
+**/[Bb]in/[Dd]ebug/
+**/[Bb]in/[Rr]elease/
+
+#for Visual studio
+packages/
+TestResults/
+
+#User Settings
+.vs/
+*.user
