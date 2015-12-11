@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSorter", "XmlSorter.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSorterCLI", "XmlSorterCLI\XmlSorterCLI.csproj", "{338BB2AD-7260-46AC-9F99-862B6925E8BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSorterLib", "XmlSorterLib\XmlSorterLib.csproj", "{761AF63A-E29B-4DD9-88B2-312E83EABE03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{338BB2AD-7260-46AC-9F99-862B6925E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{338BB2AD-7260-46AC-9F99-862B6925E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{338BB2AD-7260-46AC-9F99-862B6925E8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761AF63A-E29B-4DD9-88B2-312E83EABE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761AF63A-E29B-4DD9-88B2-312E83EABE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761AF63A-E29B-4DD9-88B2-312E83EABE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761AF63A-E29B-4DD9-88B2-312E83EABE03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,3 +10,4 @@ TestResults/
 
 #User Settings
 .vs/
+*.user
