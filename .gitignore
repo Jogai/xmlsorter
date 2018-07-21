@@ -11,3 +11,6 @@ TestResults/
 #User Settings
 .vs/
 *.user
+*.csproj.vspscc
+*.vssscc
+*.orig
